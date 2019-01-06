@@ -104,20 +104,57 @@ the proper methods. For example the LoginForm will use the LoginFormMixin that c
 ### Forms
 This package provides a couple drop-in Vuetify auth forms. They will work without any configuration. 
 
- - LoginForm
- - RegistrationForm
- - ForgotPasswordForm
- - ResetPasswordForm
+ - **BaseForm**: Abstracts common functionality used by all the other auth forms
+ - **LoginForm**
+ - **RegistrationForm**
+ - **ForgotPasswordForm**: Allows a user to enter an email to send a reset mail
+ - **ResetPasswordForm**: Allows a user to fill in a new password and passes that along with a token from the url
  
 ### Cards
 Most auth related forms come with some context. Linking for example from an to the login form 
 from other forms. The below cards will provide that functionality.
 
- - LoginCard
- - RegistrationCard
- - ForgotPasswordCard
- - ResetPasswordCard
+ - **BaseCard**: Abstracts common functionality used by all other auth cards
+ - **LoginCard**
+ - **RegistrationCard**
+ - **ForgotPasswordCard**
+ - **ResetPasswordCard**
 
+## Mixins
 
+ - **BaseFormMixin** provides common functionality for the loading state 
+ of the forms and calls the global method specified by the form
+ - **LoginFormMixin** Extends the BaseFormMixin to provide login specific feedback
+ - **RegistrationFormMixin**
+ - **ForgotPasswordFormMixin**
+ - **ResetPasswordFormMixin**
+ 
+## Custom forms
+Creating your own form is very easy. Simply add the right mixin and build the template like the below example:
 
+```vue
+
+<template>
+  <form @submit="submit">
+  
+  <input type="text" name="email" />
+  <input type="password" name="password" />
+  
+  <div v-if="error" class="error">{{error}}</div>
+  
+  <button type="submit" :color="submitBtnProps.color">
+    {{submitBtnProps.title}}
+  </button>
+</form>
+</template>
+
+export default {
+  mixins: [LoginFormMixin],
+}
+```
+
+The `@submit` event will trigger the mixin to call the right method. The mixin will 
+also provide some state like the `submitBtnProps`:
+
+TODO Document the state for the form Mixins.
 

@@ -227,7 +227,7 @@
       staticRenderFns: __vue_staticRenderFns__
   }, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, __vue_create_injector__, undefined);
 
-  var FormMixin = {
+  var BaseFormMixin = {
       statusses: {
           idle: {
               color: 'secondary',
@@ -326,7 +326,7 @@
   };
 
   var LoginFormMixin = {
-      extends: FormMixin,
+      extends: BaseFormMixin,
       statusses: {
           idle: {
               color: 'secondary',
@@ -423,7 +423,7 @@
   }, __vue_inject_styles__$1, __vue_script__$1, __vue_scope_id__$1, __vue_is_functional_template__$1, __vue_module_identifier__$1, undefined, undefined);
 
   var RegistrationFormMixin = {
-      extends: FormMixin,
+      extends: BaseFormMixin,
       statusses: {
           idle: {
               color: 'secondary',
@@ -527,7 +527,7 @@
   }, __vue_inject_styles__$2, __vue_script__$2, __vue_scope_id__$2, __vue_is_functional_template__$2, __vue_module_identifier__$2, undefined, undefined);
 
   var ForgotPasswordFormMixin = {
-      extends: FormMixin,
+      extends: BaseFormMixin,
       statusses: {
           idle: {
               color: 'secondary',
@@ -616,7 +616,7 @@
   }, __vue_inject_styles__$3, __vue_script__$3, __vue_scope_id__$3, __vue_is_functional_template__$3, __vue_module_identifier__$3, undefined, undefined);
 
   var ResetPasswordFormMixin = {
-      extends: FormMixin,
+      extends: BaseFormMixin,
       tokenName: 'reset-password-token',
       statusses: {
           idle: {
@@ -1479,7 +1479,7 @@
   }
 
   exports.AuthStorePlugin = store;
-  exports.FormMixin = FormMixin;
+  exports.BaseFormMixin = BaseFormMixin;
   exports.LoginFormMixin = LoginFormMixin;
   exports.RegistrationFormMixin = RegistrationFormMixin;
   exports.ForgotPasswordFormMixin = ForgotPasswordFormMixin;

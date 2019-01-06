@@ -1,7 +1,7 @@
-import FormMixin from './FormMixin';
+import BaseFormMixin from './BaseFormMixin';
 
 export default {
-  extends: FormMixin,
+  extends: BaseFormMixin,
 
   statusses: {
     idle: { color: 'secondary', dark: true, title: 'Login' },
