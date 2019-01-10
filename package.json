@@ -1,7 +1,7 @@
 {
   "name": "vue-accounts-vuetify",
   "version": "1.0.0",
-  "description": "An opinionated, but incrementally adoptable set of account functionality in the form of Vue Plugins, Mixins and Vuetify components",
+  "description": "Pre-made Vue Account components built with Vuetify",
   "license": "MIT",
   "main": "dist/.umd.js",
   "module": "dist/.esm.js",
